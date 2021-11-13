@@ -138,7 +138,7 @@ void *display_thread_1(void *arg)
 	/* While the alarm has yet to expiry, print a message every 2 seconds */
 	while(alarm->time > time (NULL))
 	{
-        printf( "Display Thread 1: Number of SecondsLeft <%d>: Alarm Request Number: (%d) Alarm Request: <%s> \n", alarm->seconds, alarm->Alarm_Request_Number,alarm->message);
+        printf( "Display Thread 1: Number of SecondsLeft <%d>: Alarm Request Number: (%d) Alarm Request: <%s> \n", alarm->time - time (NULL), alarm->Alarm_Request_Number,alarm->message);
 	    sleep(2);
 	}
 	/* Prints a message saying that the current alarm has expired */
@@ -182,7 +182,7 @@ void *display_thread_2(void *arg)
 	/* While the alarm has yet to expiry, print a message every 2 seconds */
 	while(alarm->time > time (NULL))
 	{
-	    printf( "Display Thread 2: Number of SecondsLeft <%d>: Alarm Request Number: (%d) Alarm Request: <%s> \n", alarm->seconds, alarm->Alarm_Request_Number,alarm->message);
+	    printf( "Display Thread 2: Number of SecondsLeft <%d>: Alarm Request Number: (%d) Alarm Request: <%s> \n", alarm->time - time (NULL), alarm->Alarm_Request_Number,alarm->message);
 	    sleep(2);
 	}
 	/* Prints a message saying that the current alarm has expired */
